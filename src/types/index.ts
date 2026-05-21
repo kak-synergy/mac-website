@@ -2,6 +2,7 @@ export interface ColorShade {
   id: string;
   name: string;
   hex: string;
+  inStock?: boolean;
 }
 
 export interface Product {

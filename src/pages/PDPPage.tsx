@@ -134,61 +134,98 @@ export default function PDPPage() {
                   Teinte : <span className="font-normal normal-case tracking-normal">{product.shades[selectedShade].name}</span>
                 </p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {product.shades.map((shade, i) => (
-                    <button
-                      key={shade.id}
-                      onClick={() => setSelectedShade(i)}
-                      title={shade.name}
-                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 transition-all hover:scale-110 ${selectedShade === i ? 'border-black scale-110 shadow-md' : 'border-gray-200'}`}
-                      style={{ backgroundColor: shade.hex }}
-                    />
-                  ))}
+                  {product.shades.map((shade, i) => {
+                    const shadeOutOfStock = shade.inStock === false;
+                    return (
+                      <button
+                        key={shade.id}
+                        onClick={() => setSelectedShade(i)}
+                        title={shadeOutOfStock ? `${shade.name} — Non disponible` : shade.name}
+                        className={`relative w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 transition-all hover:scale-110 ${selectedShade === i ? 'border-black scale-110 shadow-md' : 'border-gray-200'} ${shadeOutOfStock ? 'opacity-40' : ''}`}
+                        style={{ backgroundColor: shade.hex }}
+                      >
+                        {shadeOutOfStock && (
+                          <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <svg viewBox="0 0 32 32" className="w-full h-full rounded-full overflow-hidden">
+                              <line x1="4" y1="28" x2="28" y2="4" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                            </svg>
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
-                <p className="text-xs text-gray-500 mt-2">{product.shades[selectedShade].name}</p>
+                <p className="text-xs text-gray-500 mt-2">
+                  {product.shades[selectedShade].name}
+                  {product.shades[selectedShade].inStock === false && (
+                    <span className="ml-2 text-red-500 font-bold">— Non disponible</span>
+                  )}
+                </p>
               </div>
             )}
 
             {/* Stock & Find in store */}
             <div className="mt-6 p-4 border border-gray-200">
-              {product.inStock ? (
-                <>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0" />
-                    <span className="text-sm font-bold">En stock en boutique</span>
-                  </div>
-                  <button
-                    onClick={() => setStoreOpen(!storeOpen)}
-                    className="flex items-center gap-2 text-xs font-black tracking-widest uppercase underline hover:no-underline"
-                  >
-                    <MapPin size={14} /> Trouver en boutique {storeOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
-                  </button>
-                  {storeOpen && (
-                    <div className="mt-4 space-y-3">
-                      {stores.map((store) => (
-                        <div key={store.id} className="flex items-start justify-between py-2 border-b border-gray-100 last:border-0 gap-2">
-                          <div className="min-w-0">
-                            <p className="text-sm font-bold truncate">{store.name}</p>
-                            <p className="text-xs text-gray-500">{store.city}</p>
-                          </div>
-                          <a
-                            href={store.googleMapsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs font-black tracking-widest uppercase underline hover:no-underline flex-shrink-0"
-                          >
-                            Itinéraire
-                          </a>
-                        </div>
-                      ))}
+              {(() => {
+                const shadeStock = product.shades[selectedShade]?.inStock;
+                const shadeUnavailable = shadeStock === false;
+                const productUnavailable = !product.inStock;
+
+                if (shadeUnavailable || productUnavailable) {
+                  return (
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-2 h-2 rounded-full bg-red-500 flex-shrink-0" />
+                        <span className="text-sm font-bold">
+                          {shadeUnavailable
+                            ? `La teinte "${product.shades[selectedShade].name}" n'est pas disponible dans nos boutiques`
+                            : 'Rupture de stock'}
+                        </span>
+                      </div>
+                      {shadeUnavailable && (
+                        <p className="text-xs text-gray-500 leading-relaxed mt-1">
+                          Cette teinte est actuellement indisponible dans l'ensemble de nos 5 boutiques au Maroc. Sélectionnez une autre teinte ou contactez-nous pour être informé du réassort.
+                        </p>
+                      )}
                     </div>
-                  )}
-                </>
-              ) : (
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-red-500 flex-shrink-0" />
-                  <span className="text-sm font-bold">Rupture de stock</span>
-                </div>
-              )}
+                  );
+                }
+
+                return (
+                  <>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0" />
+                      <span className="text-sm font-bold">En stock en boutique</span>
+                    </div>
+                    <button
+                      onClick={() => setStoreOpen(!storeOpen)}
+                      className="flex items-center gap-2 text-xs font-black tracking-widest uppercase underline hover:no-underline"
+                    >
+                      <MapPin size={14} /> Trouver en boutique {storeOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+                    </button>
+                    {storeOpen && (
+                      <div className="mt-4 space-y-3">
+                        {stores.map((store) => (
+                          <div key={store.id} className="flex items-start justify-between py-2 border-b border-gray-100 last:border-0 gap-2">
+                            <div className="min-w-0">
+                              <p className="text-sm font-bold truncate">{store.name}</p>
+                              <p className="text-xs text-gray-500">{store.city}</p>
+                            </div>
+                            <a
+                              href={store.googleMapsUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs font-black tracking-widest uppercase underline hover:no-underline flex-shrink-0"
+                            >
+                              Itinéraire
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
             </div>
 
             {/* Accordions */}

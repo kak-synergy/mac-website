@@ -13,14 +13,14 @@
     ],
     "description": "Le rouge à lèvres M·A·CXIMAL offre un fini matte soyeux et intensément pigmenté avec un confort exceptionnel. Sa formule légère et hydratante tient jusqu'à 12 heures sans assécher les lèvres. Disponible dans une gamme de teintes iconiques.",
     "shades": [
-      { "id": "mx1", "name": "Whirl", "hex": "#8B5E52" },
-      { "id": "mx2", "name": "Snow Teddy", "hex": "#C9A88C" },
-      { "id": "mx3", "name": "Taupe", "hex": "#907468" },
-      { "id": "mx4", "name": "Mall It To The Max", "hex": "#B07A6A" },
-      { "id": "mx5", "name": "Velvet Teddy", "hex": "#A0714F" },
-      { "id": "mx6", "name": "Kats Kacha", "hex": "#C08870" },
-      { "id": "mx7", "name": "Honey Bare", "hex": "#D4A882" },
-      { "id": "mx8", "name": "Honey Love", "hex": "#C49070" }
+      { "id": "mx1", "name": "Whirl", "hex": "#8B5E52", "inStock": true },
+      { "id": "mx2", "name": "Snow Teddy", "hex": "#C9A88C", "inStock": true },
+      { "id": "mx3", "name": "Taupe", "hex": "#907468", "inStock": false },
+      { "id": "mx4", "name": "Mall It To The Max", "hex": "#B07A6A", "inStock": true },
+      { "id": "mx5", "name": "Velvet Teddy", "hex": "#A0714F", "inStock": true },
+      { "id": "mx6", "name": "Kats Kacha", "hex": "#C08870", "inStock": false },
+      { "id": "mx7", "name": "Honey Bare", "hex": "#D4A882", "inStock": true },
+      { "id": "mx8", "name": "Honey Love", "hex": "#C49070", "inStock": true }
     ],
     "inStock": true,
     "badge": "BEST SELLER",
