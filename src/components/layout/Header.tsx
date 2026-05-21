@@ -65,13 +65,6 @@ export default function Header() {
               </Link>
             </div>
           ))}
-          <Link
-            to="/stores"
-            className="text-xs font-bold tracking-widest uppercase hover:opacity-60 transition-opacity whitespace-nowrap"
-            onMouseEnter={() => setActiveDropdown(null)}
-          >
-            Trouver un Magasin
-          </Link>
         </nav>
 
         {/* Right icons */}
@@ -230,13 +223,6 @@ export default function Header() {
             </div>
           ))}
 
-          <Link
-            to="/stores"
-            className="block px-6 py-4 text-xs font-bold tracking-widest uppercase border-b border-gray-100 hover:bg-gray-50"
-            onClick={closeAll}
-          >
-            Trouver un Magasin
-          </Link>
           <Link
             to="/pro-register"
             className="block px-6 py-4 text-xs font-bold tracking-widest uppercase text-white bg-black hover:bg-gray-800"
