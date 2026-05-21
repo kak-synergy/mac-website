@@ -1,0 +1,67 @@
+[
+  {
+    "id": "1",
+    "name": "MAC Cosmetics — Morocco Mall",
+    "address": "Morocco Mall, Boulevard de la Corniche, Ain Diab",
+    "city": "Casablanca",
+    "phone": "+212 5 22 97 97 97",
+    "hours": [
+      { "days": "Lundi – Samedi", "time": "10:00 – 22:00" },
+      { "days": "Dimanche", "time": "11:00 – 21:00" }
+    ],
+    "coordinates": { "lat": 33.5988, "lng": -7.6625 },
+    "googleMapsUrl": "https://maps.google.com/?q=Morocco+Mall+Casablanca"
+  },
+  {
+    "id": "2",
+    "name": "MAC Cosmetics — Anfa Place",
+    "address": "Anfa Place Shopping Center, Boulevard de la Corniche",
+    "city": "Casablanca",
+    "phone": "+212 5 22 36 36 36",
+    "hours": [
+      { "days": "Lundi – Samedi", "time": "10:00 – 22:00" },
+      { "days": "Dimanche", "time": "11:00 – 21:00" }
+    ],
+    "coordinates": { "lat": 33.5932, "lng": -7.6558 },
+    "googleMapsUrl": "https://maps.google.com/?q=Anfa+Place+Shopping+Center+Casablanca"
+  },
+  {
+    "id": "3",
+    "name": "MAC Cosmetics — Carré Eden",
+    "address": "Centre Commercial Carré Eden, Avenue Mohammed VI",
+    "city": "Marrakech",
+    "phone": "+212 5 24 43 43 43",
+    "hours": [
+      { "days": "Lundi – Samedi", "time": "10:00 – 22:00" },
+      { "days": "Dimanche", "time": "11:00 – 21:00" }
+    ],
+    "coordinates": { "lat": 31.6295, "lng": -7.9811 },
+    "googleMapsUrl": "https://maps.google.com/?q=Carre+Eden+Marrakech"
+  },
+  {
+    "id": "4",
+    "name": "MAC Cosmetics — Menara Mall",
+    "address": "Menara Mall, Route de Casablanca",
+    "city": "Marrakech",
+    "phone": "+212 5 24 33 78 78",
+    "hours": [
+      { "days": "Lundi – Samedi", "time": "10:00 – 22:00" },
+      { "days": "Dimanche", "time": "11:00 – 21:00" }
+    ],
+    "coordinates": { "lat": 31.6167, "lng": -8.0167 },
+    "googleMapsUrl": "https://maps.google.com/?q=Menara+Mall+Marrakech"
+  },
+  {
+    "id": "5",
+    "name": "MAC Cosmetics — Mega Mall",
+    "address": "Mega Mall Rabat, Pont de Rabat, Salé",
+    "city": "Rabat",
+    "phone": "+212 5 37 83 83 83",
+    "hours": [
+      { "days": "Lundi – Samedi", "time": "10:00 – 22:00" },
+      { "days": "Dimanche", "time": "11:00 – 21:00" }
+    ],
+    "coordinates": { "lat": 34.0209, "lng": -6.8417 },
+    "googleMapsUrl": "https://maps.google.com/?q=Mega+Mall+Rabat"
+  }
+]

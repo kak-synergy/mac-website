@@ -1,0 +1,118 @@
+{
+  "topBanner": {
+    "text": "Rejoignez AKSAL BLACK — Profitez de 20% de remise toute l'année & accès aux événements exclusifs MAC.",
+    "ctaLabel": "Rejoindre maintenant",
+    "ctaUrl": "/pro-register"
+  },
+  "home": {
+    "hero": {
+      "title": "Été 2025",
+      "subtitle": "Nouvelles Teintes. Nouveau Vous.",
+      "description": "Découvrez la nouvelle collection été — des couleurs intenses pour des looks intemporels.",
+      "ctaLabel": "Découvrir la collection",
+      "ctaUrl": "/products",
+      "image": "/images/home-page-banner.png"
+    },
+    "banners": [
+      {
+        "id": "b1",
+        "title": "Lèvres Iconiques",
+        "subtitle": "Ruby Woo, Lady Danger et plus encore",
+        "ctaLabel": "Voir les rouges à lèvres",
+        "ctaUrl": "/products?category=Lèvres",
+        "image": "https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=800&q=80",
+        "textColor": "white"
+      },
+      {
+        "id": "b2",
+        "title": "Préparez Votre Peau",
+        "subtitle": "Prep + Prime Fix+ — La base parfaite",
+        "ctaLabel": "Voir les soins",
+        "ctaUrl": "/products?category=Peau",
+        "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80",
+        "textColor": "white"
+      },
+      {
+        "id": "b3",
+        "title": "Look Yeux Intenses",
+        "subtitle": "Palettes, eyeliners et mascaras",
+        "ctaLabel": "Voir les yeux",
+        "ctaUrl": "/products?category=Yeux",
+        "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80",
+        "textColor": "white"
+      }
+    ],
+    "bestsellersTitle": "Nos Best-Sellers",
+    "newArrivalsTitle": "Nouveautés",
+    "instagramTitle": "Suivez-nous @MACCosmeticsMorocco",
+    "instagramHandle": "@maccosmetics_morocco",
+    "instagramPosts": [
+      "https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=400&q=80",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80",
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&q=80",
+      "https://images.unsplash.com/photo-1512207655042-2a3d6a5ebb99?w=400&q=80",
+      "https://images.unsplash.com/photo-1583241800698-e8ab01830a23?w=400&q=80"
+    ],
+    "aksalBlack": {
+      "title": "AKSAL BLACK",
+      "subtitle": "Le programme fidélité qui récompense votre passion",
+      "benefits": [
+        "20% de remise sur tous les produits toute l'année",
+        "Accès prioritaire aux événements MAC exclusifs",
+        "Invitations aux ouvertures de boutiques",
+        "Accès à l'application AKSAL"
+      ],
+      "ctaLabel": "Rejoindre AKSAL Black",
+      "ctaUrl": "/pro-register",
+      "appStoreUrl": "#",
+      "googlePlayUrl": "#"
+    }
+  },
+  "categories": ["Lèvres", "Yeux", "Visage", "Peau", "Pinceaux & Outils"],
+  "proRegister": {
+    "title": "Espace Beauté Professionnelle",
+    "subtitle": "Rejoignez la communauté des professionnels de la beauté MAC",
+    "description": "En tant que professionnel(le) de la beauté, bénéficiez de 20% de remise permanente, d'un accès aux événements exclusifs MAC et à l'ouverture de nos nouvelles boutiques.",
+    "benefits": [
+      "20% de remise permanente sur tous les produits",
+      "Accès aux événements et formations MAC exclusifs",
+      "Invitations aux ouvertures de boutiques",
+      "Accès au catalogue professionnel complet"
+    ],
+    "documents": [
+      { "type": "rc", "label": "Registre de Commerce (RC)", "required": true },
+      { "type": "ice", "label": "Identifiant Commun de l'Entreprise (ICE)", "required": true },
+      { "type": "diploma", "label": "Diplôme ou Certification en Maquillage", "required": true },
+      { "type": "cin", "label": "Carte d'Identité Nationale (CIN)", "required": true }
+    ],
+    "validationNote": "Votre dossier sera examiné par notre équipe dans un délai de 5 à 7 jours ouvrables. Un identifiant unique vous sera envoyé par e-mail une fois votre profil validé.",
+    "formLabels": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Adresse e-mail professionnelle",
+      "phone": "Numéro de téléphone",
+      "businessName": "Nom du salon / studio",
+      "city": "Ville",
+      "submitBtn": "Soumettre ma candidature"
+    }
+  },
+  "findStore": {
+    "title": "Trouvez Votre Boutique MAC",
+    "subtitle": "5 boutiques au Maroc pour vous servir",
+    "directionsLabel": "Obtenir l'itinéraire",
+    "hoursLabel": "Horaires d'ouverture",
+    "phoneLabel": "Téléphone",
+    "inStockLabel": "En stock en boutique",
+    "outOfStockLabel": "Rupture de stock"
+  },
+  "footer": {
+    "tagline": "Tous Les Ages. Toutes les Races. Tous les Sexes.",
+    "newsletterTitle": "Restez Connecté",
+    "newsletterText": "Recevez les dernières nouveautés et offres exclusives.",
+    "newsletterPlaceholder": "Votre adresse e-mail",
+    "newsletterBtn": "S'abonner",
+    "whatsappText": "Ou rejoignez-nous sur WhatsApp",
+    "whatsappPlaceholder": "+212 6XX XXX XXX",
+    "copyright": "MAC Cosmetics Morocco — Distribué par AKSAL Group. Tous droits réservés."
+  }
+}

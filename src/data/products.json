@@ -1,0 +1,294 @@
+[
+  {
+    "id": "0",
+    "name": "M·A·CXIMAL Silky Matte Lipstick",
+    "category": "Lèvres",
+    "subcategory": "Rouge à Lèvres",
+    "price": 279,
+    "image": "/images/macximal-product.png",
+    "images": [
+      "/images/macximal-product.png",
+      "/images/macximal-texture.png",
+      "/images/macximal-swatches.png"
+    ],
+    "description": "Le rouge à lèvres M·A·CXIMAL offre un fini matte soyeux et intensément pigmenté avec un confort exceptionnel. Sa formule légère et hydratante tient jusqu'à 12 heures sans assécher les lèvres. Disponible dans une gamme de teintes iconiques.",
+    "shades": [
+      { "id": "mx1", "name": "Whirl", "hex": "#8B5E52" },
+      { "id": "mx2", "name": "Snow Teddy", "hex": "#C9A88C" },
+      { "id": "mx3", "name": "Taupe", "hex": "#907468" },
+      { "id": "mx4", "name": "Mall It To The Max", "hex": "#B07A6A" },
+      { "id": "mx5", "name": "Velvet Teddy", "hex": "#A0714F" },
+      { "id": "mx6", "name": "Kats Kacha", "hex": "#C08870" },
+      { "id": "mx7", "name": "Honey Bare", "hex": "#D4A882" },
+      { "id": "mx8", "name": "Honey Love", "hex": "#C49070" }
+    ],
+    "inStock": true,
+    "badge": "BEST SELLER",
+    "rating": 4.9,
+    "reviewCount": 18420
+  },
+  {
+    "id": "1",
+    "name": "Rouge à Lèvres Matte",
+    "category": "Lèvres",
+    "subcategory": "Rouge à Lèvres",
+    "price": 249,
+    "image": "https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=600&q=80",
+      "https://images.unsplash.com/photo-1586495777744-4e6232bf4e8e?w=600&q=80"
+    ],
+    "description": "Le rouge à lèvres matte iconique de MAC offre une couleur riche et couvrante avec un confort léger. Tenue jusqu'à 8 heures. Formule vegan.",
+    "shades": [
+      { "id": "s1", "name": "Ruby Woo", "hex": "#9B1C1C" },
+      { "id": "s2", "name": "Lady Danger", "hex": "#CC3300" },
+      { "id": "s3", "name": "Velvet Teddy", "hex": "#A0714F" },
+      { "id": "s4", "name": "Whirl", "hex": "#8B5E52" },
+      { "id": "s5", "name": "Diva", "hex": "#5C2318" },
+      { "id": "s6", "name": "Taupe", "hex": "#907468" }
+    ],
+    "inStock": true,
+    "badge": "BEST SELLER",
+    "rating": 4.8,
+    "reviewCount": 12563
+  },
+  {
+    "id": "2",
+    "name": "Rouge à Lèvres Retro Matte",
+    "category": "Lèvres",
+    "subcategory": "Rouge à Lèvres",
+    "price": 279,
+    "image": "https://images.unsplash.com/photo-1512207655042-2a3d6a5ebb99?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1512207655042-2a3d6a5ebb99?w=600&q=80"
+    ],
+    "description": "Un fini matte rétro avec une tenue exceptionnelle. Pigments ultras intenses pour un look audacieux.",
+    "shades": [
+      { "id": "s7", "name": "All Fired Up", "hex": "#CC0047" },
+      { "id": "s8", "name": "Flat Out Fabulous", "hex": "#8B0040" },
+      { "id": "s9", "name": "Relentlessly Red", "hex": "#CC1A2B" },
+      { "id": "s10", "name": "Runway Hit", "hex": "#C2185B" }
+    ],
+    "inStock": true,
+    "badge": "NOUVEAU",
+    "rating": 4.7,
+    "reviewCount": 3241
+  },
+  {
+    "id": "3",
+    "name": "Fond de Teint Studio Fix Fluid SPF 15",
+    "category": "Visage",
+    "subcategory": "Fond de Teint",
+    "price": 399,
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80"
+    ],
+    "description": "Fond de teint couvrance totale, fini mat avec SPF 15. Plus de 40 teintes disponibles. Tenue 24 heures.",
+    "shades": [
+      { "id": "s11", "name": "NW10", "hex": "#F5D5B0" },
+      { "id": "s12", "name": "NW20", "hex": "#E8B88A" },
+      { "id": "s13", "name": "NW30", "hex": "#D4956A" },
+      { "id": "s14", "name": "NW40", "hex": "#B8724E" },
+      { "id": "s15", "name": "NW50", "hex": "#8B5A3A" },
+      { "id": "s16", "name": "NC15", "hex": "#F0CCA0" }
+    ],
+    "inStock": true,
+    "badge": "BEST SELLER",
+    "rating": 4.6,
+    "reviewCount": 8920
+  },
+  {
+    "id": "4",
+    "name": "Prep + Prime Fix+",
+    "category": "Peau",
+    "subcategory": "Fixateur",
+    "price": 259,
+    "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80"
+    ],
+    "description": "Spray multi-usage fixateur et rafraîchissant enrichi en vitamines C, E et thé vert. Prolonge la tenue du maquillage.",
+    "shades": [
+      { "id": "s17", "name": "Original", "hex": "#DDEEFF" },
+      { "id": "s18", "name": "Rose", "hex": "#FFD6E0" },
+      { "id": "s19", "name": "Noix de Coco", "hex": "#FFF5E0" }
+    ],
+    "inStock": true,
+    "badge": "BEST SELLER",
+    "rating": 4.9,
+    "reviewCount": 15420
+  },
+  {
+    "id": "5",
+    "name": "Palette Fards à Paupières — Neutral Times Nine",
+    "category": "Yeux",
+    "subcategory": "Fards à Paupières",
+    "price": 549,
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80"
+    ],
+    "description": "Neuf teintes coordonnées en finitions matte, satin et shimmer. Parfaite pour des looks jour-nuit.",
+    "shades": [
+      { "id": "s20", "name": "Omega", "hex": "#C8B9A8" },
+      { "id": "s21", "name": "Soba", "hex": "#9C7B5E" },
+      { "id": "s22", "name": "Espresso", "hex": "#3D2B1F" },
+      { "id": "s23", "name": "Wedge", "hex": "#B09080" }
+    ],
+    "inStock": true,
+    "badge": "NOUVEAU",
+    "rating": 4.7,
+    "reviewCount": 2180
+  },
+  {
+    "id": "6",
+    "name": "Correcteur Pro Longwear",
+    "category": "Visage",
+    "subcategory": "Correcteur",
+    "price": 299,
+    "image": "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600&q=80"
+    ],
+    "description": "Correcteur longue tenue à couverture totale. Cache les cernes, les rougeurs et les imperfections. Plus de 15 teintes.",
+    "shades": [
+      { "id": "s24", "name": "NW15", "hex": "#F2D8B8" },
+      { "id": "s25", "name": "NW25", "hex": "#E8C49A" },
+      { "id": "s26", "name": "NW35", "hex": "#D4A878" },
+      { "id": "s27", "name": "NC30", "hex": "#DDB892" }
+    ],
+    "inStock": true,
+    "badge": null,
+    "rating": 4.5,
+    "reviewCount": 5632
+  },
+  {
+    "id": "7",
+    "name": "Strobe Cream",
+    "category": "Visage",
+    "subcategory": "Illuminateur",
+    "price": 319,
+    "image": "https://images.unsplash.com/photo-1583241475880-083f84372725?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1583241475880-083f84372725?w=600&q=80"
+    ],
+    "description": "Une crème hydratante nacrée qui apporte éclat et luminosité. Peut s'utiliser seul ou mélangé au fond de teint.",
+    "shades": [
+      { "id": "s28", "name": "Pinklite", "hex": "#FFD6D6" },
+      { "id": "s29", "name": "Goldlite", "hex": "#FFE4A0" },
+      { "id": "s30", "name": "Silverlite", "hex": "#E8E8F0" }
+    ],
+    "inStock": false,
+    "badge": "LIMITÉ",
+    "rating": 4.8,
+    "reviewCount": 3871
+  },
+  {
+    "id": "8",
+    "name": "Crayon à Lèvres",
+    "category": "Lèvres",
+    "subcategory": "Contour des Lèvres",
+    "price": 189,
+    "image": "https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=600&q=80"
+    ],
+    "description": "Définissez, remodelisez et remplissez les lèvres avec ce crayon longue tenue. Disponible en 50+ teintes.",
+    "shades": [
+      { "id": "s31", "name": "Brick", "hex": "#8B3A2A" },
+      { "id": "s32", "name": "Spice", "hex": "#9B5C3E" },
+      { "id": "s33", "name": "Chestnut", "hex": "#7B4A35" },
+      { "id": "s34", "name": "Plum", "hex": "#6A2E5B" }
+    ],
+    "inStock": true,
+    "badge": null,
+    "rating": 4.6,
+    "reviewCount": 7214
+  },
+  {
+    "id": "9",
+    "name": "Mineralize Skinfinish",
+    "category": "Visage",
+    "subcategory": "Poudre",
+    "price": 379,
+    "image": "https://images.unsplash.com/photo-1567721913486-6585f069b3d0?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1567721913486-6585f069b3d0?w=600&q=80"
+    ],
+    "description": "Une poudre pressée marbrée multi-usage pour un fini lumineux et naturel. Fixe, illumine et perfectionne.",
+    "shades": [
+      { "id": "s35", "name": "Soft & Gentle", "hex": "#D4A0A0" },
+      { "id": "s36", "name": "Light Flush", "hex": "#E8B8B0" },
+      { "id": "s37", "name": "Gold Deposit", "hex": "#D4A060" },
+      { "id": "s38", "name": "Global Glow", "hex": "#C89060" }
+    ],
+    "inStock": true,
+    "badge": null,
+    "rating": 4.7,
+    "reviewCount": 4320
+  },
+  {
+    "id": "10",
+    "name": "Pinceau Estompeur 217S",
+    "category": "Pinceaux & Outils",
+    "subcategory": "Pinceaux",
+    "price": 299,
+    "image": "https://images.unsplash.com/photo-1587467512961-120760940315?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1587467512961-120760940315?w=600&q=80"
+    ],
+    "description": "Le pinceau estompeur iconique. Sa forme dôme douce estompe les fards à paupières à la perfection. Qualité professionnelle.",
+    "shades": [
+      { "id": "s39", "name": "Manche Noir", "hex": "#1A1A1A" }
+    ],
+    "inStock": true,
+    "badge": "BEST SELLER",
+    "rating": 4.9,
+    "reviewCount": 9821
+  },
+  {
+    "id": "11",
+    "name": "Crayon Yeux Technakohl",
+    "category": "Yeux",
+    "subcategory": "Eyeliner",
+    "price": 219,
+    "image": "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=600&q=80"
+    ],
+    "description": "Un crayon liner façon kohl qui glisse en douceur pour un trait estompable et fondu. Résistant à l'eau.",
+    "shades": [
+      { "id": "s40", "name": "Graphblack", "hex": "#1A1A1A" },
+      { "id": "s41", "name": "Powersurge", "hex": "#4A3F7A" },
+      { "id": "s42", "name": "Engraved", "hex": "#5A3A2A" },
+      { "id": "s43", "name": "In the Navy", "hex": "#1C2E5A" }
+    ],
+    "inStock": true,
+    "badge": null,
+    "rating": 4.6,
+    "reviewCount": 3547
+  },
+  {
+    "id": "12",
+    "name": "Palette Collection Holiday",
+    "category": "Yeux",
+    "subcategory": "Fards à Paupières",
+    "price": 699,
+    "image": "https://images.unsplash.com/photo-1583241800698-e8ab01830a23?w=600&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1583241800698-e8ab01830a23?w=600&q=80"
+    ],
+    "description": "Une palette édition limitée avec 12 teintes en finitions métallique, pailletée et matte pour des looks spectaculaires.",
+    "shades": [
+      { "id": "s44", "name": "Copper", "hex": "#B87333" },
+      { "id": "s45", "name": "Burgundy", "hex": "#800020" },
+      { "id": "s46", "name": "Gold", "hex": "#D4A017" },
+      { "id": "s47", "name": "Black", "hex": "#1A1A1A" }
+    ],
+    "inStock": true,
+    "badge": "LIMITÉ",
+    "rating": 4.8,
+    "reviewCount": 1240
+  }
+]
