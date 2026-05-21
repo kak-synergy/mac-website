@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Upload, CheckCircle, Info, ArrowRight } from 'lucide-react';
+import { Upload, CheckCircle, Info, ArrowRight, Sparkles, Scissors, Flower2, GraduationCap, Wand2, Camera } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import content from '../data/content.json';
 import SEO from '../components/SEO';
 
@@ -45,13 +46,13 @@ const STEPS = [
   },
 ];
 
-const PROFILES = [
-  { icon: '💄', label: 'Maquilleurs / Maquilleuses' },
-  { icon: '✂️', label: 'Coiffeurs / Coiffeuses' },
-  { icon: '🧖', label: 'Esthéticiennes' },
-  { icon: '🎓', label: 'Étudiants en école de beauté' },
-  { icon: '🎬', label: 'Artistes & Stylistes' },
-  { icon: '📸', label: 'Photographes & Créateurs' },
+const PROFILES: { Icon: LucideIcon; label: string }[] = [
+  { Icon: Sparkles,      label: 'Maquilleurs / Maquilleuses' },
+  { Icon: Scissors,      label: 'Coiffeurs / Coiffeuses' },
+  { Icon: Flower2,       label: 'Esthéticiennes' },
+  { Icon: GraduationCap, label: 'Étudiants en école de beauté' },
+  { Icon: Wand2,         label: 'Artistes & Stylistes' },
+  { Icon: Camera,        label: 'Photographes & Créateurs' },
 ];
 
 export default function ProRegisterPage() {
@@ -132,11 +133,13 @@ export default function ProRegisterPage() {
           <p className="text-xs font-black tracking-widest uppercase text-center mb-6 text-gray-400">
             Ce programme est fait pour vous si vous êtes
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            {PROFILES.map((p) => (
-              <div key={p.label} className="text-center">
-                <div className="text-2xl mb-2">{p.icon}</div>
-                <p className="text-xs font-bold leading-snug text-gray-700">{p.label}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            {PROFILES.map(({ Icon, label }) => (
+              <div key={label} className="flex flex-col items-center gap-3 text-center">
+                <div className="w-14 h-14 border border-black flex items-center justify-center flex-shrink-0">
+                  <Icon size={22} strokeWidth={1.5} />
+                </div>
+                <p className="text-xs font-bold tracking-wide leading-snug text-gray-800">{label}</p>
               </div>
             ))}
           </div>
