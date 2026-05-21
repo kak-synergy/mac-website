@@ -167,7 +167,7 @@ export default function Header() {
 
       {/* ── Mobile menu ───────────────────────────────────────────── */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white overflow-y-auto max-h-[80vh]">
+        <div className="md:hidden fixed inset-0 top-16 bg-white overflow-y-auto z-40">
           {NAV_CATEGORIES.map((cat, idx) => (
             <div key={cat.href} className="border-b border-gray-100">
               <div className="flex items-center">

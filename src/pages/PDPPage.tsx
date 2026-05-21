@@ -96,6 +96,7 @@ export default function PDPPage() {
                 src={product.images[activeImage]}
                 alt={product.name}
                 className="w-full h-full object-cover"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
               {product.badge && (
                 <span className="absolute top-4 left-4 bg-black text-white text-[10px] font-black tracking-widest uppercase px-2 py-1">

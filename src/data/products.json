@@ -33,10 +33,10 @@
     "category": "Lèvres",
     "subcategory": "Rouge à Lèvres",
     "price": 249,
-    "image": "https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=600&q=80",
+    "image": "/images/product-lipstick.png",
     "images": [
-      "https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=600&q=80",
-      "https://images.unsplash.com/photo-1586495777744-4e6232bf4e8e?w=600&q=80"
+      "/images/product-lipstick.png",
+      "/images/product-lipstick-swatch.png"
     ],
     "description": "Le rouge à lèvres matte iconique de MAC offre une couleur riche et couvrante avec un confort léger. Tenue jusqu'à 8 heures. Formule vegan.",
     "shades": [
@@ -58,9 +58,10 @@
     "category": "Lèvres",
     "subcategory": "Rouge à Lèvres",
     "price": 279,
-    "image": "https://images.unsplash.com/photo-1512207655042-2a3d6a5ebb99?w=600&q=80",
+    "image": "/images/product-liquid-lip.png",
     "images": [
-      "https://images.unsplash.com/photo-1512207655042-2a3d6a5ebb99?w=600&q=80"
+      "/images/product-liquid-lip.png",
+      "/images/product-lipstick-swatch.png"
     ],
     "description": "Un fini matte rétro avec une tenue exceptionnelle. Pigments ultras intenses pour un look audacieux.",
     "shades": [
@@ -80,9 +81,9 @@
     "category": "Visage",
     "subcategory": "Fond de Teint",
     "price": 399,
-    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
+    "image": "/images/product-concealer.png",
     "images": [
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80"
+      "/images/product-concealer.png"
     ],
     "description": "Fond de teint couvrance totale, fini mat avec SPF 15. Plus de 40 teintes disponibles. Tenue 24 heures.",
     "shades": [
@@ -104,9 +105,9 @@
     "category": "Peau",
     "subcategory": "Fixateur",
     "price": 259,
-    "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
+    "image": "/images/product-mascara.png",
     "images": [
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80"
+      "/images/product-mascara.png"
     ],
     "description": "Spray multi-usage fixateur et rafraîchissant enrichi en vitamines C, E et thé vert. Prolonge la tenue du maquillage.",
     "shades": [
@@ -125,9 +126,10 @@
     "category": "Yeux",
     "subcategory": "Fards à Paupières",
     "price": 549,
-    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80",
+    "image": "/images/product-eyeshadow-palette.png",
     "images": [
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80"
+      "/images/product-eyeshadow-palette.png",
+      "/images/product-dazzleshadow.png"
     ],
     "description": "Neuf teintes coordonnées en finitions matte, satin et shimmer. Parfaite pour des looks jour-nuit.",
     "shades": [
@@ -147,9 +149,9 @@
     "category": "Visage",
     "subcategory": "Correcteur",
     "price": 299,
-    "image": "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600&q=80",
+    "image": "/images/product-concealer.png",
     "images": [
-      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600&q=80"
+      "/images/product-concealer.png"
     ],
     "description": "Correcteur longue tenue à couverture totale. Cache les cernes, les rougeurs et les imperfections. Plus de 15 teintes.",
     "shades": [
@@ -169,9 +171,9 @@
     "category": "Visage",
     "subcategory": "Illuminateur",
     "price": 319,
-    "image": "https://images.unsplash.com/photo-1583241475880-083f84372725?w=600&q=80",
+    "image": "/images/product-lipstick-swatch.png",
     "images": [
-      "https://images.unsplash.com/photo-1583241475880-083f84372725?w=600&q=80"
+      "/images/product-lipstick-swatch.png"
     ],
     "description": "Une crème hydratante nacrée qui apporte éclat et luminosité. Peut s'utiliser seul ou mélangé au fond de teint.",
     "shades": [
@@ -190,9 +192,9 @@
     "category": "Lèvres",
     "subcategory": "Contour des Lèvres",
     "price": 189,
-    "image": "https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=600&q=80",
+    "image": "/images/product-eyeliner.png",
     "images": [
-      "https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=600&q=80"
+      "/images/product-eyeliner.png"
     ],
     "description": "Définissez, remodelisez et remplissez les lèvres avec ce crayon longue tenue. Disponible en 50+ teintes.",
     "shades": [
@@ -212,9 +214,9 @@
     "category": "Visage",
     "subcategory": "Poudre",
     "price": 379,
-    "image": "https://images.unsplash.com/photo-1567721913486-6585f069b3d0?w=600&q=80",
+    "image": "/images/product-eyeshadow-palette.png",
     "images": [
-      "https://images.unsplash.com/photo-1567721913486-6585f069b3d0?w=600&q=80"
+      "/images/product-eyeshadow-palette.png"
     ],
     "description": "Une poudre pressée marbrée multi-usage pour un fini lumineux et naturel. Fixe, illumine et perfectionne.",
     "shades": [
@@ -234,9 +236,9 @@
     "category": "Pinceaux & Outils",
     "subcategory": "Pinceaux",
     "price": 299,
-    "image": "https://images.unsplash.com/photo-1587467512961-120760940315?w=600&q=80",
+    "image": "/images/product-dazzleshadow.png",
     "images": [
-      "https://images.unsplash.com/photo-1587467512961-120760940315?w=600&q=80"
+      "/images/product-dazzleshadow.png"
     ],
     "description": "Le pinceau estompeur iconique. Sa forme dôme douce estompe les fards à paupières à la perfection. Qualité professionnelle.",
     "shades": [
@@ -253,9 +255,9 @@
     "category": "Yeux",
     "subcategory": "Eyeliner",
     "price": 219,
-    "image": "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=600&q=80",
+    "image": "/images/product-eyeliner.png",
     "images": [
-      "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=600&q=80"
+      "/images/product-eyeliner.png"
     ],
     "description": "Un crayon liner façon kohl qui glisse en douceur pour un trait estompable et fondu. Résistant à l'eau.",
     "shades": [
@@ -275,9 +277,10 @@
     "category": "Yeux",
     "subcategory": "Fards à Paupières",
     "price": 699,
-    "image": "https://images.unsplash.com/photo-1583241800698-e8ab01830a23?w=600&q=80",
+    "image": "/images/product-mascara.png",
     "images": [
-      "https://images.unsplash.com/photo-1583241800698-e8ab01830a23?w=600&q=80"
+      "/images/product-mascara.png",
+      "/images/product-eyeshadow-palette.png"
     ],
     "description": "Une palette édition limitée avec 12 teintes en finitions métallique, pailletée et matte pour des looks spectaculaires.",
     "shades": [

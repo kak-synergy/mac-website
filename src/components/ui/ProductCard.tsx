@@ -13,6 +13,7 @@ export default function ProductCard({ product }: Props) {
           src={product.image}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         {product.badge && (
           <span className="absolute top-3 left-3 bg-black text-white text-[10px] font-black tracking-widest uppercase px-2 py-1">
