@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
+type Channel = 'email' | 'whatsapp';
+
 export default function NewsletterPopup() {
   const [open, setOpen] = useState(false);
+  const [channel, setChannel] = useState<Channel>('email');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -21,6 +25,10 @@ export default function NewsletterPopup() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (channel === 'whatsapp' && phone) {
+      const cleaned = phone.replace(/\s/g, '');
+      window.open(`https://wa.me/${cleaned.startsWith('+') ? cleaned.slice(1) : cleaned}`, '_blank');
+    }
     setSubmitted(true);
     setTimeout(dismiss, 2000);
   };
@@ -38,7 +46,6 @@ export default function NewsletterPopup() {
           <X size={20} />
         </button>
 
-        {/* Image strip */}
         <div
           className="h-48 bg-cover bg-center"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=800&q=80')" }}
@@ -55,23 +62,57 @@ export default function NewsletterPopup() {
               <h2 className="text-2xl font-black uppercase tracking-tight text-center">
                 Restez dans la tendance
               </h2>
-              <p className="text-sm text-gray-600 text-center mt-2 mb-6">
+              <p className="text-sm text-gray-600 text-center mt-2 mb-5">
                 Inscrivez-vous et recevez les nouveautés, offres exclusives et invitations aux événements MAC.
               </p>
+
+              {/* Channel tabs */}
+              <div className="flex border border-black mb-5">
+                <button
+                  type="button"
+                  onClick={() => setChannel('email')}
+                  className={`flex-1 py-2 text-xs font-black tracking-widest uppercase transition-colors ${
+                    channel === 'email' ? 'bg-black text-white' : 'bg-white text-black hover:bg-gray-100'
+                  }`}
+                >
+                  E-mail
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setChannel('whatsapp')}
+                  className={`flex-1 py-2 text-xs font-black tracking-widest uppercase transition-colors border-l border-black ${
+                    channel === 'whatsapp' ? 'bg-black text-white' : 'bg-white text-black hover:bg-gray-100'
+                  }`}
+                >
+                  WhatsApp
+                </button>
+              </div>
+
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Votre adresse e-mail"
-                  className="border border-black px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-black"
-                />
+                {channel === 'email' ? (
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Votre adresse e-mail"
+                    className="border border-black px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-black"
+                  />
+                ) : (
+                  <input
+                    type="tel"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="+212 6XX XXX XXX"
+                    className="border border-black px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-black"
+                  />
+                )}
                 <button
                   type="submit"
                   className="bg-black text-white py-3 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors"
                 >
-                  S'abonner
+                  {channel === 'whatsapp' ? 'Rejoindre sur WhatsApp' : "S'abonner"}
                 </button>
               </form>
               <button

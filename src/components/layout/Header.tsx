@@ -224,6 +224,20 @@ export default function Header() {
           ))}
 
           <Link
+            to="/makeup-booking"
+            className="block px-6 py-4 text-xs font-bold tracking-widest uppercase border-b border-gray-100"
+            onClick={closeAll}
+          >
+            Prendre Rendez-vous Maquillage
+          </Link>
+          <Link
+            to="/gift-cards"
+            className="block px-6 py-4 text-xs font-bold tracking-widest uppercase border-b border-gray-100"
+            onClick={closeAll}
+          >
+            Carte Cadeau
+          </Link>
+          <Link
             to="/pro-register"
             className="block px-6 py-4 text-xs font-bold tracking-widest uppercase text-white bg-black hover:bg-gray-800"
             onClick={closeAll}

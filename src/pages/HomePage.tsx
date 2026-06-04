@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Gift, Calendar } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
 import CategoryStrip from '../components/ui/CategoryStrip';
 import SEO from '../components/SEO';
@@ -97,52 +97,101 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Pro Programme Banner */}
+      {/* Makeup Booking Banner */}
       <section className="bg-black text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-4">
-            Programme Professionnel
-          </p>
-          <h2 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tight leading-none mb-6">
-            Beauté<br />Professionnelle
-          </h2>
-          <p className="text-gray-300 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
-            Vous êtes maquilleur(se) professionnel(le) ? Rejoignez le programme MAC dédié aux professionnels de la beauté et bénéficiez d'avantages exclusifs toute l'année.
-          </p>
-
-          {/* Main advantage highlighted */}
-          <div className="inline-flex items-center gap-4 border border-white/30 px-8 py-5 mb-10">
-            <span className="text-5xl font-black leading-none">20%</span>
-            <div className="text-left">
-              <p className="text-sm font-black uppercase tracking-wider">de remise permanente</p>
-              <p className="text-xs text-gray-400 mt-0.5">sur tous les produits MAC, toute l'année</p>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-4">
+                Services en Boutique
+              </p>
+              <h2 className="text-white text-4xl md:text-5xl font-black uppercase tracking-tight leading-none mb-6">
+                Prendre<br />Rendez-vous<br />Maquillage
+              </h2>
+              <p className="text-gray-300 text-sm mb-6 leading-relaxed max-w-sm">
+                Réservez votre séance maquillage avec nos artistes MAC dans nos boutiques Massira et Maârif.
+                Tout est remboursable en produit.
+              </p>
+              <Link
+                to="/makeup-booking"
+                className="inline-block bg-white text-black px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-200 transition-colors"
+              >
+                Réserver maintenant
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                { icon: Calendar, title: 'Maquillage', desc: 'Séance individuelle avec un artiste MAC' },
+                { icon: Calendar, title: 'Makeup Party', desc: 'Séance en groupe pour célébrer un événement' },
+                { icon: Calendar, title: 'Makeup Mariée', desc: 'Look de mariée sur-mesure' },
+              ].map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="flex items-center gap-4 border border-white/20 px-5 py-4">
+                  <div className="w-10 h-10 border border-white/30 flex items-center justify-center flex-shrink-0">
+                    <Icon size={18} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-black uppercase tracking-wide">{title}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{desc} — remboursable en produit</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Other benefits */}
-          <ul className="flex flex-col md:flex-row gap-5 justify-center mb-10">
-            {[
-              "Accès aux événements et formations MAC exclusifs",
-              "Invitations aux ouvertures de boutiques",
-              "Accès au catalogue professionnel complet",
-            ].map((b, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-gray-300 md:max-w-[180px] text-left">
-                <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center font-black text-[9px] flex-shrink-0 mt-0.5">✓</span>
-                {b}
-              </li>
-            ))}
-          </ul>
+      {/* Gift Card Banner */}
+      <section className="max-w-7xl mx-auto px-4 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          <div className="bg-gray-50 border border-gray-200 p-10 flex flex-col justify-between">
+            <div>
+              <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-3">Idée Cadeau</p>
+              <h2 className="text-3xl font-black uppercase tracking-tight mb-4">Carte Cadeau MAC</h2>
+              <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-sm">
+                Offrez le plaisir du maquillage professionnel. Disponible en boutique en différents montants.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {[100, 200, 300, 500, 1000].map((amt) => (
+                  <span key={amt} className="border border-black px-3 py-1 text-xs font-black">{amt} MAD</span>
+                ))}
+              </div>
+            </div>
+            <Link
+              to="/gift-cards"
+              className="inline-flex items-center gap-2 bg-black text-white px-8 py-3 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors self-start"
+            >
+              <Gift size={14} /> Découvrir les cartes cadeaux
+            </Link>
+          </div>
 
-          <p className="text-xs text-gray-500 mb-6">
-            Inscription sur dossier — dépôt de documents requis (RC, ICE, diplôme, CIN).
-          </p>
-
-          <Link
-            to="/pro-register"
-            className="inline-block bg-white text-black px-12 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-200 transition-colors"
-          >
-            Nous rejoindre en tant que Pro
-          </Link>
+          {/* Pro Programme */}
+          <div className="bg-black text-white p-10 flex flex-col justify-between">
+            <div>
+              <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-3">Programme Professionnel</p>
+              <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-4">Beauté Professionnelle</h2>
+              <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-sm">
+                Maquilleur(se), esthéticienne, salon de coiffure, artiste TV ? Rejoignez le programme MAC dédié aux professionnels.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  "Avantages exclusifs toute l'année",
+                  "Accès aux événements et formations MAC",
+                  "Invitations aux ouvertures de boutiques",
+                ].map((b, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-300">
+                    <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center font-black text-[9px] flex-shrink-0 mt-0.5">✓</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <Link
+              to="/pro-register"
+              className="inline-block bg-white text-black px-8 py-3 text-xs font-black tracking-widest uppercase hover:bg-gray-200 transition-colors self-start"
+            >
+              Nous rejoindre en tant que Pro
+            </Link>
+          </div>
         </div>
       </section>
 

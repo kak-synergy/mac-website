@@ -11,6 +11,8 @@ import FindStorePage from './pages/FindStorePage';
 import SearchPage from './pages/SearchPage';
 import ProRegisterPage from './pages/ProRegisterPage';
 import ProAccountPage from './pages/ProAccountPage';
+import MakeupBookingPage from './pages/MakeupBookingPage';
+import GiftCardPage from './pages/GiftCardPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -35,6 +37,8 @@ export default function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/pro-register" element={<ProRegisterPage />} />
         <Route path="/pro-account" element={<ProAccountPage />} />
+        <Route path="/makeup-booking" element={<MakeupBookingPage />} />
+        <Route path="/gift-cards" element={<GiftCardPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
