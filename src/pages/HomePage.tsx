@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import productsData from '../data/products.json';
 import content from '../data/content.json';
 import type { Product } from '../types';
+import { asset } from '../lib/asset';
 
 const products = productsData as Product[];
 
@@ -36,7 +37,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative h-[80vh] min-h-[500px] flex items-end overflow-hidden">
         <img
-          src={hero.image}
+          src={asset(hero.image)}
           alt="Hero"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />

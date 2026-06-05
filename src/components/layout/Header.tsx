@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, Menu, X, User, ChevronDown } from 'lucide-react';
 import { NAV_CATEGORIES } from '../../data/navigation';
+import { asset } from '../../lib/asset';
 
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -42,7 +43,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className="flex-shrink-0 mx-auto md:mx-0" onClick={closeAll}>
-          <img src="/images/mac-logo.png" alt="M·A·C Cosmetics" className="h-7 sm:h-8 w-auto" />
+          <img src={asset('/images/mac-logo.png')} alt="M·A·C Cosmetics" className="h-7 sm:h-8 w-auto" />
         </Link>
 
         {/* Desktop nav */}

@@ -24,7 +24,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/mac-website">
       <ScrollToTop />
       <TopBanner />
       <Header />

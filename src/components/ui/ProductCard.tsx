@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Product } from '../../types';
+import { asset } from '../../lib/asset';
 
 interface Props {
   product: Product;
@@ -10,7 +11,7 @@ export default function ProductCard({ product }: Props) {
     <Link to={`/products/${product.id}`} className="group block">
       <div className="relative overflow-hidden bg-gray-50 aspect-square">
         <img
-          src={product.image}
+          src={asset(product.image)}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

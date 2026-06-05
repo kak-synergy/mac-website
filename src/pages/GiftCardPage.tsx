@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Gift, MapPin, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import storesData from '../data/stores.json';
+import { asset } from '../lib/asset';
 
 const AMOUNTS = [100, 200, 300, 500, 1000];
 
@@ -57,7 +58,7 @@ export default function GiftCardPage() {
                 }}
               />
               <div className="relative z-10 text-center px-8">
-                <img src="/images/mac-logo.png" alt="M·A·C" className="h-8 w-auto mx-auto mb-4 invert" />
+                <img src={asset('/images/mac-logo.png')} alt="M·A·C" className="h-8 w-auto mx-auto mb-4 invert" />
                 {finalAmount && finalAmount > 0 ? (
                   <p className="text-5xl font-black">{finalAmount} <span className="text-2xl">MAD</span></p>
                 ) : (

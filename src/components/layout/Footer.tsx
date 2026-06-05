@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { asset } from '../../lib/asset';
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div>
-          <img src="/images/mac-logo.png" alt="M·A·C Cosmetics" className="h-8 w-auto mb-4 invert" />
+          <img src={asset('/images/mac-logo.png')} alt="M·A·C Cosmetics" className="h-8 w-auto mb-4 invert" />
           <p className="text-gray-400 text-xs leading-relaxed">
             Make-up Art Cosmetics.<br />
             Tous Les Ages. Toutes les Races. Tous les Sexes.
