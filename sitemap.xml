@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.maccosmetics.ma/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://www.maccosmetics.ma/"/>
+  </url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/products</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/products?category=L%C3%A8vres</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/products?category=Yeux</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/products?category=Visage</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/products?category=Peau</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/products?category=Pinceaux+%26+Outils</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Product pages -->
+  <url><loc>https://www.maccosmetics.ma/products/0</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/6</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/7</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/8</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/9</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/10</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/11</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.maccosmetics.ma/products/12</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/stores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.maccosmetics.ma/pro-register</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
