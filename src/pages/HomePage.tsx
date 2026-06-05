@@ -143,37 +143,31 @@ export default function HomePage() {
 
       {/* Pro Programme */}
       <section className="bg-gray-50 py-16 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-10">
-          <div className="flex-1">
-            <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-3">Programme Professionnel</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4">Beauté Professionnelle</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-lg">
-              Maquilleur(se), esthéticienne, salon de coiffure, artiste TV ? Rejoignez le programme MAC dédié aux professionnels.
-            </p>
-            <ul className="space-y-2 mb-8">
-              {[
-                "Avantages exclusifs toute l'année",
-                "Accès aux événements et formations MAC",
-                "Invitations aux ouvertures de boutiques",
-                "À la caisse : présentez votre CIN pour bénéficier de vos avantages",
-              ].map((b, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="w-4 h-4 rounded-full bg-black flex items-center justify-center font-black text-[9px] text-white flex-shrink-0 mt-0.5">✓</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/pro-register"
-              className="inline-block bg-black text-white px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors"
-            >
-              Nous rejoindre en tant que Pro
-            </Link>
-          </div>
-          <div className="flex-shrink-0 bg-black text-white px-10 py-8 text-center">
-            <p className="text-xs font-black tracking-widest uppercase text-gray-400 mb-2">Accès Pro</p>
-            <p className="text-xs text-gray-300 leading-relaxed">Présentez votre<br /><strong className="text-white">CIN + ID Pro</strong><br />à la caisse</p>
-          </div>
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-3">Programme Professionnel</p>
+          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4">Beauté Professionnelle</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-xl">
+            Maquilleur(se), esthéticienne, salon de coiffure, artiste TV ? Rejoignez le programme MAC dédié aux professionnels de la beauté.
+          </p>
+          <ul className="space-y-2 mb-8 max-w-xl">
+            {[
+              "Une remise exclusive vous est attribuée dès l'acceptation de votre dossier",
+              "Accès aux événements et formations MAC exclusifs",
+              "Invitations aux ouvertures de boutiques",
+              "Accès au catalogue professionnel complet",
+            ].map((b, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                <span className="w-4 h-4 rounded-full bg-black flex items-center justify-center font-black text-[9px] text-white flex-shrink-0 mt-0.5">✓</span>
+                {b}
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/pro-register"
+            className="inline-block bg-black text-white px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors"
+          >
+            Nous rejoindre en tant que Pro
+          </Link>
         </div>
       </section>
 

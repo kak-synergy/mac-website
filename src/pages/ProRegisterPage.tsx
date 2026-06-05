@@ -234,6 +234,56 @@ export default function ProRegisterPage() {
         </div>
       </section>
 
+      {/* ── Règles d'adhésion ────────────────────────────────────── */}
+      <section className="py-12 px-4 border-t border-gray-200">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-8">
+            Règles d'adhésion
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            {/* How to use your ID */}
+            <div className="border border-black p-6">
+              <p className="text-xs font-black tracking-widest uppercase mb-4">Utiliser votre ID en boutique</p>
+              <ol className="space-y-3">
+                {[
+                  "Recevez votre identifiant professionnel MAC (format MAC-MA-XXXXX) par e-mail après validation.",
+                  "À la caisse, présentez votre ID Pro MAC accompagné de votre CIN.",
+                  "Votre remise de 20% est appliquée automatiquement sur l'ensemble de vos achats.",
+                ].map((rule, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                    <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center font-black text-[10px] flex-shrink-0 mt-0.5">
+                      {i + 1}
+                    </span>
+                    {rule}
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Rules & conditions */}
+            <div className="bg-gray-50 border border-gray-200 p-6">
+              <p className="text-xs font-black tracking-widest uppercase mb-4">Conditions d'utilisation</p>
+              <ul className="space-y-3">
+                {[
+                  "La remise est strictement personnelle et non transférable.",
+                  "L'ID Pro est valable uniquement en boutique MAC au Maroc, sur présentation de la CIN.",
+                  "Toute tentative de fraude entraîne la suspension immédiate du compte.",
+                  "Le programme est réservé aux professionnels exerçant une activité dans le secteur de la beauté.",
+                  "MAC se réserve le droit de demander une mise à jour des documents à tout moment.",
+                ].map((rule, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                    <span className="w-1 h-1 rounded-full bg-gray-400 flex-shrink-0 mt-1.5" />
+                    {rule}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── Form section ─────────────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
         {/* Benefits sidebar */}
