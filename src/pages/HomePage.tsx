@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, Gift, Calendar } from 'lucide-react';
+import { ChevronRight, Calendar } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
 import CategoryStrip from '../components/ui/CategoryStrip';
 import SEO from '../components/SEO';
@@ -141,57 +141,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Gift Card Banner */}
-      <section className="max-w-7xl mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-          <div className="bg-gray-50 border border-gray-200 p-10 flex flex-col justify-between">
-            <div>
-              <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-3">Idée Cadeau</p>
-              <h2 className="text-3xl font-black uppercase tracking-tight mb-4">Carte Cadeau MAC</h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-sm">
-                Offrez le plaisir du maquillage professionnel. Disponible en boutique en différents montants.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {[100, 200, 300, 500, 1000].map((amt) => (
-                  <span key={amt} className="border border-black px-3 py-1 text-xs font-black">{amt} MAD</span>
-                ))}
-              </div>
-            </div>
-            <Link
-              to="/gift-cards"
-              className="inline-flex items-center gap-2 bg-black text-white px-8 py-3 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors self-start"
-            >
-              <Gift size={14} /> Découvrir les cartes cadeaux
-            </Link>
-          </div>
-
-          {/* Pro Programme */}
-          <div className="bg-black text-white p-10 flex flex-col justify-between">
-            <div>
-              <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-3">Programme Professionnel</p>
-              <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-4">Beauté Professionnelle</h2>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-sm">
-                Maquilleur(se), esthéticienne, salon de coiffure, artiste TV ? Rejoignez le programme MAC dédié aux professionnels.
-              </p>
-              <ul className="space-y-2 mb-6">
-                {[
-                  "Avantages exclusifs toute l'année",
-                  "Accès aux événements et formations MAC",
-                  "Invitations aux ouvertures de boutiques",
-                ].map((b, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-gray-300">
-                    <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center font-black text-[9px] flex-shrink-0 mt-0.5">✓</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* Pro Programme */}
+      <section className="bg-gray-50 py-16 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-10">
+          <div className="flex-1">
+            <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-3">Programme Professionnel</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4">Beauté Professionnelle</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-lg">
+              Maquilleur(se), esthéticienne, salon de coiffure, artiste TV ? Rejoignez le programme MAC dédié aux professionnels.
+            </p>
+            <ul className="space-y-2 mb-8">
+              {[
+                "Avantages exclusifs toute l'année",
+                "Accès aux événements et formations MAC",
+                "Invitations aux ouvertures de boutiques",
+                "À la caisse : présentez votre CIN pour bénéficier de vos avantages",
+              ].map((b, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                  <span className="w-4 h-4 rounded-full bg-black flex items-center justify-center font-black text-[9px] text-white flex-shrink-0 mt-0.5">✓</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
             <Link
               to="/pro-register"
-              className="inline-block bg-white text-black px-8 py-3 text-xs font-black tracking-widest uppercase hover:bg-gray-200 transition-colors self-start"
+              className="inline-block bg-black text-white px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors"
             >
               Nous rejoindre en tant que Pro
             </Link>
+          </div>
+          <div className="flex-shrink-0 bg-black text-white px-10 py-8 text-center">
+            <p className="text-xs font-black tracking-widest uppercase text-gray-400 mb-2">Accès Pro</p>
+            <p className="text-xs text-gray-300 leading-relaxed">Présentez votre<br /><strong className="text-white">CIN + ID Pro</strong><br />à la caisse</p>
           </div>
         </div>
       </section>
