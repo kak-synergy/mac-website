@@ -142,7 +142,7 @@ export default function HomePage() {
       </section>
 
       {/* Pro Programme */}
-      <section className="bg-black text-white py-20 px-4 overflow-hidden">
+      <section className="bg-white py-20 px-4 overflow-hidden border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
@@ -151,10 +151,10 @@ export default function HomePage() {
               <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-4">
                 Programme Professionnel
               </p>
-              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight leading-none mb-6">
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight leading-none mb-6 text-black">
                 Beauté<br />Professionnelle
               </h2>
-              <p className="text-gray-300 text-sm leading-relaxed mb-8 max-w-sm">
+              <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-sm">
                 Maquilleur(se), esthéticienne, salon de coiffure, artiste TV ? Rejoignez le programme MAC et profitez d'avantages exclusifs toute l'année.
               </p>
               <ul className="space-y-3 mb-10">
@@ -163,15 +163,15 @@ export default function HomePage() {
                   "Invitations aux ouvertures de boutiques",
                   "Accès au catalogue professionnel complet",
                 ].map((b, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                    <span className="w-4 h-4 rounded-full border border-white/30 flex items-center justify-center font-black text-[9px] flex-shrink-0 mt-0.5">✓</span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                    <span className="w-4 h-4 rounded-full bg-black flex items-center justify-center font-black text-[9px] text-white flex-shrink-0 mt-0.5">✓</span>
                     {b}
                   </li>
                 ))}
               </ul>
               <Link
                 to="/pro-register"
-                className="inline-block bg-white text-black px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-200 transition-colors"
+                className="inline-block bg-black text-white px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors"
               >
                 Rejoindre le programme
               </Link>
@@ -179,8 +179,8 @@ export default function HomePage() {
 
             {/* Right — discount teaser */}
             <div className="flex justify-center md:justify-end">
-              <div className="relative w-72 h-72 flex items-center justify-center border border-white/10">
-                {/* Large decorative % */}
+              <div className="relative w-72 h-72 bg-black flex items-center justify-center overflow-hidden">
+                {/* Large decorative % watermark */}
                 <span
                   className="absolute text-[11rem] font-black leading-none select-none pointer-events-none"
                   style={{ color: 'rgba(255,255,255,0.06)' }}
@@ -189,10 +189,10 @@ export default function HomePage() {
                 </span>
                 {/* Inner content */}
                 <div className="relative z-10 text-center px-6">
-                  <p className="text-[10px] font-black tracking-[0.35em] uppercase text-gray-400 mb-3">
+                  <p className="text-[10px] font-black tracking-[0.35em] uppercase text-gray-500 mb-3">
                     Votre avantage
                   </p>
-                  <p className="text-3xl font-black uppercase tracking-tight leading-tight mb-3">
+                  <p className="text-3xl font-black uppercase tracking-tight leading-tight mb-3 text-white">
                     Remise<br />Exclusive
                   </p>
                   <div className="w-8 h-px bg-white/30 mx-auto mb-3" />
@@ -201,10 +201,10 @@ export default function HomePage() {
                   </p>
                 </div>
                 {/* Corner accents */}
-                <span className="absolute top-0 left-0 w-4 h-4 border-t border-l border-white/40" />
-                <span className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/40" />
-                <span className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/40" />
-                <span className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-white/40" />
+                <span className="absolute top-3 left-3 w-4 h-4 border-t border-l border-white/30" />
+                <span className="absolute top-3 right-3 w-4 h-4 border-t border-r border-white/30" />
+                <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-white/30" />
+                <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-white/30" />
               </div>
             </div>
 
