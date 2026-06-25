@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Package, Heart, MapPin, User, LogOut, Plus, Trash2, Check, Edit2 } from 'lucide-react';
+import { Package, Heart, MapPin, User, LogOut, Plus, Trash2, Check, Edit2, ChevronDown, ChevronUp, CreditCard, Truck } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
 import SEO from '../components/SEO';
 import productsData from '../data/products.json';
-import type { Product, Address } from '../types';
+import type { Product, Address, Order } from '../types';
 
 const products = productsData as Product[];
 
@@ -17,12 +17,128 @@ const STATUS_COLORS: Record<string, string> = {
   'Livré':    'bg-green-100 text-green-800',
 };
 
+const DELIVERY_STEPS = [
+  { key: 'placed',     label: 'Commande passée',   desc: 'Nous avons bien reçu votre commande.' },
+  { key: 'dispatched', label: 'Commande expédiée',  desc: 'Votre colis est en route.' },
+  { key: 'delivered',  label: 'Commande reçue',     desc: 'Livraison effectuée.' },
+];
+
+function stepIndex(status: Order['status']) {
+  if (status === 'En cours') return 0;
+  if (status === 'Expédié')  return 1;
+  return 2;
+}
+
+function OrderDetail({ order }: { order: Order }) {
+  const active = stepIndex(order.status);
+  return (
+    <div className="border-t border-gray-100 pt-5 mt-5 space-y-6">
+
+      {/* Delivery tracker */}
+      <div>
+        <p className="text-[10px] font-black tracking-widest uppercase text-gray-400 mb-4">Suivi de livraison</p>
+        <div className="relative">
+          {/* connecting line */}
+          <div className="absolute top-4 left-4 right-4 h-0.5 bg-gray-200 z-0" />
+          <div
+            className="absolute top-4 left-4 h-0.5 bg-black z-0 transition-all duration-500"
+            style={{ width: active === 0 ? '0%' : active === 1 ? '50%' : '100%' }}
+          />
+          <div className="relative z-10 flex justify-between">
+            {DELIVERY_STEPS.map((step, i) => {
+              const done    = i <= active;
+              const current = i === active;
+              return (
+                <div key={step.key} className="flex flex-col items-center gap-2 flex-1">
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors ${done ? 'bg-black border-black text-white' : 'bg-white border-gray-300 text-gray-300'}`}>
+                    {done ? <Check size={13} /> : <span className="text-[10px] font-black">{i + 1}</span>}
+                  </div>
+                  <div className="text-center px-1">
+                    <p className={`text-[10px] font-black uppercase tracking-wide leading-tight ${current ? 'text-black' : done ? 'text-gray-700' : 'text-gray-400'}`}>
+                      {step.label}
+                    </p>
+                    {current && (
+                      <p className="text-[9px] text-gray-500 mt-0.5 leading-tight hidden sm:block">{step.desc}</p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Products */}
+      <div>
+        <p className="text-[10px] font-black tracking-widest uppercase text-gray-400 mb-3">Articles ({order.items.length})</p>
+        <div className="space-y-3">
+          {order.items.map((item) => (
+            <div key={`${item.productId}-${item.shade?.id ?? '_'}`} className="flex items-center gap-3">
+              <div className="w-14 h-14 bg-gray-50 flex-shrink-0 overflow-hidden">
+                <img src={item.image} alt={item.name} className="w-full h-full object-cover"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-bold leading-snug">{item.name}</p>
+                {item.shade && (
+                  <div className="flex items-center gap-1.5 mt-0.5">
+                    <span className="w-2.5 h-2.5 rounded-full border border-gray-200 flex-shrink-0" style={{ backgroundColor: item.shade.hex }} />
+                    <span className="text-[11px] text-gray-500">{item.shade.name}</span>
+                  </div>
+                )}
+                <p className="text-[11px] text-gray-400 mt-0.5">Qté : {item.quantity}</p>
+              </div>
+              <p className="text-xs font-black flex-shrink-0">{item.price * item.quantity} MAD</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Address + payment */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="border border-gray-100 p-3">
+          <div className="flex items-center gap-1.5 mb-2">
+            <MapPin size={11} className="text-gray-400" />
+            <p className="text-[10px] font-black tracking-widest uppercase text-gray-400">Livraison à</p>
+          </div>
+          <p className="text-xs font-bold">{order.address.firstName} {order.address.lastName}</p>
+          <p className="text-xs text-gray-600">{order.address.address}</p>
+          <p className="text-xs text-gray-600">{order.address.city} {order.address.zip}</p>
+          <p className="text-xs text-gray-500 mt-0.5">{order.address.phone}</p>
+        </div>
+        <div className="border border-gray-100 p-3">
+          <div className="flex items-center gap-1.5 mb-2">
+            {order.paymentMethod === 'card' ? <CreditCard size={11} className="text-gray-400" /> : <Truck size={11} className="text-gray-400" />}
+            <p className="text-[10px] font-black tracking-widest uppercase text-gray-400">Paiement</p>
+          </div>
+          <p className="text-xs font-bold">
+            {order.paymentMethod === 'card' ? 'Carte bancaire' : 'Paiement en espèce'}
+          </p>
+          <div className="mt-3 space-y-1 border-t border-gray-100 pt-2">
+            <div className="flex justify-between text-[11px] text-gray-500">
+              <span>Sous-total</span><span className="font-bold">{order.subtotal} MAD</span>
+            </div>
+            <div className="flex justify-between text-[11px] text-gray-500">
+              <span>Livraison</span><span className="font-bold">{order.deliveryFee === 0 ? 'Gratuite' : `${order.deliveryFee} MAD`}</span>
+            </div>
+            <div className="flex justify-between text-xs font-black border-t border-gray-100 pt-1.5 mt-1">
+              <span>Total</span><span>{order.total} MAD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
 export default function AccountPage() {
   const navigate = useNavigate();
   const { user, isAuthenticated, logout, orders, addresses, addAddress, updateAddress, removeAddress, updateProfile } = useAuth();
   const { items: wishlistIds, toggle } = useWishlist();
 
   const [tab, setTab] = useState<Tab>('orders');
+  const [expandedOrder, setExpandedOrder] = useState<string | null>(null);
 
   // Profile form
   const [profileForm, setProfileForm] = useState({ firstName: user?.firstName || '', lastName: user?.lastName || '', email: user?.email || '', phone: user?.phone || '' });
@@ -131,37 +247,56 @@ export default function AccountPage() {
                   </Link>
                 </div>
               ) : (
-                <div className="space-y-4">
-                  {orders.map((order) => (
-                    <div key={order.id} className="border border-gray-200 p-5">
-                      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                        <div>
-                          <p className="text-xs font-black tracking-widest uppercase">{order.id}</p>
-                          <p className="text-xs text-gray-500 mt-0.5">{order.date}</p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <span className={`text-[10px] font-black tracking-wide uppercase px-2 py-1 rounded-full ${STATUS_COLORS[order.status] || 'bg-gray-100 text-gray-600'}`}>
-                            {order.status}
-                          </span>
-                          <span className="text-sm font-black">{order.total} MAD</span>
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {order.items.map((item) => (
-                          <div key={`${item.productId}-${item.shade?.id ?? '_'}`} className="w-10 h-10 bg-gray-50 overflow-hidden flex-shrink-0">
-                            <img src={item.image} alt={item.name} className="w-full h-full object-cover"
-                              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                <div className="space-y-3">
+                  {orders.map((order) => {
+                    const open = expandedOrder === order.id;
+                    return (
+                      <div key={order.id} className={`border transition-colors ${open ? 'border-black' : 'border-gray-200'}`}>
+                        {/* Clickable header row */}
+                        <button
+                          onClick={() => setExpandedOrder(open ? null : order.id)}
+                          className="w-full text-left p-5"
+                        >
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex items-center gap-3 min-w-0">
+                              {/* Thumbnails */}
+                              <div className="flex -space-x-2 flex-shrink-0">
+                                {order.items.slice(0, 3).map((item) => (
+                                  <div key={`${item.productId}-${item.shade?.id ?? '_'}`} className="w-9 h-9 bg-gray-50 overflow-hidden border-2 border-white flex-shrink-0">
+                                    <img src={item.image} alt="" className="w-full h-full object-cover"
+                                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                                  </div>
+                                ))}
+                                {order.items.length > 3 && (
+                                  <div className="w-9 h-9 bg-gray-100 border-2 border-white flex items-center justify-center flex-shrink-0">
+                                    <span className="text-[9px] font-black text-gray-500">+{order.items.length - 3}</span>
+                                  </div>
+                                )}
+                              </div>
+                              <div className="min-w-0">
+                                <p className="text-xs font-black tracking-widest uppercase">{order.id}</p>
+                                <p className="text-[11px] text-gray-500 mt-0.5">{order.date} · {order.items.length} article{order.items.length > 1 ? 's' : ''}</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-3 flex-shrink-0">
+                              <span className={`text-[10px] font-black tracking-wide uppercase px-2.5 py-1 rounded-full ${STATUS_COLORS[order.status] || 'bg-gray-100 text-gray-600'}`}>
+                                {order.status}
+                              </span>
+                              <span className="text-sm font-black">{order.total} MAD</span>
+                              {open ? <ChevronUp size={14} className="text-gray-400" /> : <ChevronDown size={14} className="text-gray-400" />}
+                            </div>
                           </div>
-                        ))}
-                        <div className="flex-1 min-w-0 ml-1 self-center">
-                          <p className="text-xs text-gray-600">{order.items.map((i) => i.name).join(', ')}</p>
-                          <p className="text-[11px] text-gray-400 mt-0.5">
-                            {order.paymentMethod === 'card' ? 'Carte bancaire' : 'Paiement en espèce'}
-                          </p>
-                        </div>
+                        </button>
+
+                        {/* Expanded detail */}
+                        {open && (
+                          <div className="px-5 pb-5">
+                            <OrderDetail order={order} />
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </div>
