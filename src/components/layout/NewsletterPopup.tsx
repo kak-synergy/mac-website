@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { asset } from '../../lib/asset';
+
+// ── Change the popup image here ──────────────────────────────────────────────
+const POPUP_IMAGE = '/images/home-page-banner.png';
+// ────────────────────────────────────────────────────────────────────────────
 
 type Channel = 'email' | 'whatsapp';
 
@@ -46,9 +51,10 @@ export default function NewsletterPopup() {
           <X size={20} />
         </button>
 
-        <div
-          className="h-48 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1631214499644-f00718b5b7ac?w=800&q=80')" }}
+        <img
+          src={asset(POPUP_IMAGE)}
+          alt=""
+          className="w-full h-48 object-cover block"
         />
 
         <div className="px-8 py-8">
