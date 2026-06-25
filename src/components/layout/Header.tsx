@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, Menu, X, User, ChevronDown } from 'lucide-react';
+import { Search, Menu, X, User, ChevronDown, ShoppingBag } from 'lucide-react';
 import { NAV_CATEGORIES } from '../../data/navigation';
+import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -10,6 +12,8 @@ export default function Header() {
   const [mobileExpanded, setMobileExpanded] = useState<number | null>(null);
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+  const { itemCount, openCart } = useCart();
+  const { isAuthenticated } = useAuth();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,9 +86,24 @@ export default function Header() {
           >
             <Search size={20} />
           </button>
-          <Link to="/pro-account" className="hover:opacity-60 transition-opacity" aria-label="Compte Pro">
+          <Link to="/account" className="hover:opacity-60 transition-opacity relative" aria-label="Mon compte">
             <User size={20} />
+            {isAuthenticated && (
+              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-black border-2 border-white" />
+            )}
           </Link>
+          <button
+            onClick={openCart}
+            aria-label="Panier"
+            className="hover:opacity-60 transition-opacity relative"
+          >
+            <ShoppingBag size={20} />
+            {itemCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-black text-white text-[9px] font-black flex items-center justify-center leading-none">
+                {itemCount > 9 ? '9+' : itemCount}
+              </span>
+            )}
+          </button>
         </div>
       </div>
 

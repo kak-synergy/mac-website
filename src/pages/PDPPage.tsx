@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, ChevronDown, ChevronUp } from 'lucide-react';
+import { MapPin, ChevronDown, ChevronUp, Plus, Minus, Heart, ShoppingBag } from 'lucide-react';
+import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 
 function Accordion({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
@@ -32,6 +34,10 @@ export default function PDPPage() {
   const [selectedShade, setSelectedShade] = useState(0);
   const [activeImage, setActiveImage] = useState(0);
   const [storeOpen, setStoreOpen] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [addedToCart, setAddedToCart] = useState(false);
+  const { addItem, openCart } = useCart();
+  const { toggle, isWishlisted } = useWishlist();
 
   if (!product) {
     return (
@@ -41,6 +47,28 @@ export default function PDPPage() {
       </main>
     );
   }
+
+  const wishlisted = isWishlisted(product.id);
+  const currentShade = product.shades[selectedShade];
+  const shadeUnavailable = currentShade?.inStock === false;
+  const canAddToCart = product.inStock && !shadeUnavailable;
+
+  const handleAddToCart = () => {
+    if (!canAddToCart) return;
+    addItem({
+      productId: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      shade: product.shades.length > 1 && currentShade
+        ? { id: currentShade.id, name: currentShade.name, hex: currentShade.hex }
+        : null,
+      quantity,
+    });
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 1800);
+    openCart();
+  };
 
   const similar = products
     .filter((p) => p.category === product.category && p.id !== product.id)
@@ -226,6 +254,56 @@ export default function PDPPage() {
                   </>
                 );
               })()}
+            </div>
+
+            {/* Quantity + Add to cart + Wishlist */}
+            <div className="mt-6 flex flex-col gap-3">
+              {/* Quantity selector */}
+              <div className="flex items-center gap-4">
+                <span className="text-[10px] font-black tracking-widest uppercase text-gray-500">Quantité</span>
+                <div className="flex items-center border border-gray-300">
+                  <button
+                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                    className="w-9 h-9 flex items-center justify-center hover:bg-gray-100 transition-colors"
+                    aria-label="Diminuer"
+                  >
+                    <Minus size={12} />
+                  </button>
+                  <span className="w-10 text-center text-sm font-bold">{quantity}</span>
+                  <button
+                    onClick={() => setQuantity((q) => Math.min(10, q + 1))}
+                    className="w-9 h-9 flex items-center justify-center hover:bg-gray-100 transition-colors"
+                    aria-label="Augmenter"
+                  >
+                    <Plus size={12} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Add to cart */}
+              <div className="flex gap-3">
+                <button
+                  onClick={handleAddToCart}
+                  disabled={!canAddToCart}
+                  className={`flex-1 flex items-center justify-center gap-2 py-4 text-[11px] font-black tracking-widest uppercase transition-colors ${
+                    canAddToCart
+                      ? addedToCart
+                        ? 'bg-green-700 text-white'
+                        : 'bg-black text-white hover:bg-gray-800'
+                      : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                  }`}
+                >
+                  <ShoppingBag size={15} />
+                  {addedToCart ? 'Ajouté au panier !' : canAddToCart ? 'Ajouter au panier' : 'Indisponible'}
+                </button>
+                <button
+                  onClick={() => toggle(product.id)}
+                  aria-label={wishlisted ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                  className={`w-14 border flex items-center justify-center transition-colors ${wishlisted ? 'border-black bg-black text-white' : 'border-gray-300 text-gray-500 hover:border-black hover:text-black'}`}
+                >
+                  <Heart size={16} fill={wishlisted ? 'currentColor' : 'none'} />
+                </button>
+              </div>
             </div>
 
             {/* Accordions */}

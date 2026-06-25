@@ -44,3 +44,44 @@ export type Category =
   | 'Visage'
   | 'Peau'
   | 'Pinceaux & Outils';
+
+export interface CartItem {
+  productId: string;
+  name: string;
+  image: string;
+  price: number;
+  shade: { id: string; name: string; hex: string } | null;
+  quantity: number;
+}
+
+export interface Address {
+  id: string;
+  label: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  address: string;
+  city: string;
+  zip: string;
+  isDefault: boolean;
+}
+
+export interface Order {
+  id: string;
+  date: string;
+  items: CartItem[];
+  subtotal: number;
+  deliveryFee: number;
+  total: number;
+  status: 'En cours' | 'Expédié' | 'Livré';
+  address: { firstName: string; lastName: string; phone: string; address: string; city: string; zip: string };
+  paymentMethod: 'card' | 'cod';
+}
+
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+}
