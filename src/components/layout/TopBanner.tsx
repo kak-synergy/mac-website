@@ -9,7 +9,7 @@ export default function TopBanner() {
     <div className="bg-black text-white text-center py-2 px-4 text-xs tracking-widest uppercase font-medium relative flex items-center justify-center">
       <span>
         Rejoignez{' '}
-        <strong className="font-black">AKSAL BLACK</strong> — Profitez de 20% de remise toute l'année &amp; accès aux événements exclusifs MAC.{' '}
+        <strong className="font-black">AKSAL BLACK</strong> — Accès aux événements exclusifs MAC &amp; avantages professionnels.{' '}
         <a href="/pro-register" className="underline hover:no-underline font-bold">
           Rejoindre maintenant
         </a>

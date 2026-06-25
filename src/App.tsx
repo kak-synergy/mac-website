@@ -15,6 +15,8 @@ import FindStorePage from './pages/FindStorePage';
 import SearchPage from './pages/SearchPage';
 import ProRegisterPage from './pages/ProRegisterPage';
 import ProAccountPage from './pages/ProAccountPage';
+import MakeupBookingPage from './pages/MakeupBookingPage';
+import GiftCardPage from './pages/GiftCardPage';
 import AuthPage from './pages/AuthPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderConfirmationPage from './pages/OrderConfirmationPage';
@@ -30,7 +32,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/mac-website">
       <AuthProvider>
         <CartProvider>
           <WishlistProvider>
@@ -47,6 +49,8 @@ export default function App() {
               <Route path="/search" element={<SearchPage />} />
               <Route path="/pro-register" element={<ProRegisterPage />} />
               <Route path="/pro-account" element={<ProAccountPage />} />
+              <Route path="/makeup-booking" element={<MakeupBookingPage />} />
+              <Route path="/gift-cards" element={<GiftCardPage />} />
               <Route path="/login" element={<AuthPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/order-confirmation" element={<OrderConfirmationPage />} />

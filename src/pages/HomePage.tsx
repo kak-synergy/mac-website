@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Calendar } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
 import CategoryStrip from '../components/ui/CategoryStrip';
 import SEO from '../components/SEO';
 import productsData from '../data/products.json';
 import content from '../data/content.json';
 import type { Product } from '../types';
+import { asset } from '../lib/asset';
 
 const products = productsData as Product[];
 
@@ -36,7 +37,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative h-[80vh] min-h-[500px] flex items-end overflow-hidden">
         <img
-          src={hero.image}
+          src={asset(hero.image)}
           alt="Hero"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
@@ -97,52 +98,117 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Pro Programme Banner */}
+      {/* Makeup Booking Banner */}
       <section className="bg-black text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-4">
-            Programme Professionnel
-          </p>
-          <h2 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tight leading-none mb-6">
-            Beauté<br />Professionnelle
-          </h2>
-          <p className="text-gray-300 text-sm mb-10 max-w-lg mx-auto leading-relaxed">
-            Vous êtes maquilleur(se) professionnel(le) ? Rejoignez le programme MAC dédié aux professionnels de la beauté et bénéficiez d'avantages exclusifs toute l'année.
-          </p>
-
-          {/* Main advantage highlighted */}
-          <div className="inline-flex items-center gap-4 border border-white/30 px-8 py-5 mb-10">
-            <span className="text-5xl font-black leading-none">20%</span>
-            <div className="text-left">
-              <p className="text-sm font-black uppercase tracking-wider">de remise permanente</p>
-              <p className="text-xs text-gray-400 mt-0.5">sur tous les produits MAC, toute l'année</p>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-4">
+                Services en Boutique
+              </p>
+              <h2 className="text-white text-4xl md:text-5xl font-black uppercase tracking-tight leading-none mb-6">
+                Prendre<br />Rendez-vous<br />Maquillage
+              </h2>
+              <p className="text-gray-300 text-sm mb-6 leading-relaxed max-w-sm">
+                Réservez votre séance maquillage avec nos artistes MAC dans nos boutiques Massira et Maârif.
+                Tout est remboursable en produit.
+              </p>
+              <Link
+                to="/makeup-booking"
+                className="inline-block bg-white text-black px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-200 transition-colors"
+              >
+                Réserver maintenant
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                { icon: Calendar, title: 'Maquillage', desc: 'Séance individuelle avec un artiste MAC' },
+                { icon: Calendar, title: 'Makeup Party', desc: 'Séance en groupe pour célébrer un événement' },
+                { icon: Calendar, title: 'Makeup Mariée', desc: 'Look de mariée sur-mesure' },
+              ].map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="flex items-center gap-4 border border-white/20 px-5 py-4">
+                  <div className="w-10 h-10 border border-white/30 flex items-center justify-center flex-shrink-0">
+                    <Icon size={18} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-black uppercase tracking-wide">{title}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{desc} — remboursable en produit</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Other benefits */}
-          <ul className="flex flex-col md:flex-row gap-5 justify-center mb-10">
-            {[
-              "Accès aux événements et formations MAC exclusifs",
-              "Invitations aux ouvertures de boutiques",
-              "Accès au catalogue professionnel complet",
-            ].map((b, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-gray-300 md:max-w-[180px] text-left">
-                <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center font-black text-[9px] flex-shrink-0 mt-0.5">✓</span>
-                {b}
-              </li>
-            ))}
-          </ul>
+      {/* Pro Programme */}
+      <section className="bg-white py-20 px-4 overflow-hidden border-t border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          <p className="text-xs text-gray-500 mb-6">
-            Inscription sur dossier — dépôt de documents requis (RC, ICE, diplôme, CIN).
-          </p>
+            {/* Left — copy */}
+            <div>
+              <p className="text-xs font-black tracking-[0.4em] uppercase text-gray-400 mb-4">
+                Programme Professionnel
+              </p>
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight leading-none mb-6 text-black">
+                Beauté<br />Professionnelle
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-sm">
+                Maquilleur(se), esthéticienne, salon de coiffure, artiste TV ? Rejoignez le programme MAC et profitez d'avantages exclusifs toute l'année.
+              </p>
+              <ul className="space-y-3 mb-10">
+                {[
+                  "Accès aux événements et formations MAC exclusifs",
+                  "Invitations aux ouvertures de boutiques",
+                  "Accès au catalogue professionnel complet",
+                ].map((b, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                    <span className="w-4 h-4 rounded-full bg-black flex items-center justify-center font-black text-[9px] text-white flex-shrink-0 mt-0.5">✓</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/pro-register"
+                className="inline-block bg-black text-white px-10 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-800 transition-colors"
+              >
+                Rejoindre le programme
+              </Link>
+            </div>
 
-          <Link
-            to="/pro-register"
-            className="inline-block bg-white text-black px-12 py-4 text-xs font-black tracking-widest uppercase hover:bg-gray-200 transition-colors"
-          >
-            Nous rejoindre en tant que Pro
-          </Link>
+            {/* Right — discount teaser */}
+            <div className="flex justify-center md:justify-end">
+              <div className="relative w-72 h-72 bg-black flex items-center justify-center overflow-hidden">
+                {/* Large decorative % watermark */}
+                <span
+                  className="absolute text-[11rem] font-black leading-none select-none pointer-events-none"
+                  style={{ color: 'rgba(255,255,255,0.06)' }}
+                >
+                  %
+                </span>
+                {/* Inner content */}
+                <div className="relative z-10 text-center px-6">
+                  <p className="text-[10px] font-black tracking-[0.35em] uppercase text-gray-500 mb-3">
+                    Votre avantage
+                  </p>
+                  <p className="text-3xl font-black uppercase tracking-tight leading-tight mb-3 text-white">
+                    Remise<br />Exclusive
+                  </p>
+                  <div className="w-8 h-px bg-white/30 mx-auto mb-3" />
+                  <p className="text-xs text-gray-400 leading-relaxed">
+                    Révélée à l'acceptation<br />de votre dossier
+                  </p>
+                </div>
+                {/* Corner accents */}
+                <span className="absolute top-3 left-3 w-4 h-4 border-t border-l border-white/30" />
+                <span className="absolute top-3 right-3 w-4 h-4 border-t border-r border-white/30" />
+                <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-white/30" />
+                <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-white/30" />
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 

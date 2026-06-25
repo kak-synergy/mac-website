@@ -216,14 +216,14 @@ export default function ProAccountPage() {
         <aside className="space-y-8">
           <div className="bg-black text-white p-6 text-center">
             <p className="text-xs font-black tracking-widest uppercase text-gray-400 mb-1">Votre remise</p>
-            <p className="text-4xl sm:text-5xl font-black">20%</p>
-            <p className="text-xs text-gray-400 mt-1">sur tous les produits toute l'année</p>
+            <p className="text-5xl font-black leading-none">20%</p>
+            <p className="text-xs text-gray-400 mt-2">sur tous les produits MAC, toute l'année</p>
           </div>
 
           <div>
             <h2 className="text-xs font-black tracking-widest uppercase mb-4 border-b border-gray-200 pb-2">Mes Avantages</h2>
             <ul className="space-y-3">
-              {['20% de remise permanente', 'Accès aux événements MAC exclusifs', "Invitations aux ouvertures de boutiques"].map((b) => (
+              {['20% de remise permanente sur tous les produits', 'Accès aux événements MAC exclusifs', "Invitations aux ouvertures de boutiques"].map((b) => (
                 <li key={b} className="flex items-center gap-2 text-sm">
                   <Star size={14} className="fill-black text-black flex-shrink-0" /> {b}
                 </li>
