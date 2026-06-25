@@ -156,7 +156,7 @@ export default function AccountPage() {
                         <div className="flex-1 min-w-0 ml-1 self-center">
                           <p className="text-xs text-gray-600">{order.items.map((i) => i.name).join(', ')}</p>
                           <p className="text-[11px] text-gray-400 mt-0.5">
-                            {order.paymentMethod === 'card' ? 'Carte bancaire' : 'Contre remboursement'}
+                            {order.paymentMethod === 'card' ? 'Carte bancaire' : 'Paiement en espèce'}
                           </p>
                         </div>
                       </div>

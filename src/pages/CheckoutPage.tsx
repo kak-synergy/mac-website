@@ -179,7 +179,7 @@ export default function CheckoutPage() {
               <div className="space-y-3">
                 {([
                   { value: 'card', label: 'Carte bancaire', desc: 'Visa, Mastercard, CIH, CIB, Al Barid' },
-                  { value: 'cod', label: 'Livraison contre remboursement', desc: 'Paiement en espèces à la livraison' },
+                  { value: 'cod', label: 'Livraison avec paiement en espèce', desc: 'Paiement en espèces à la livraison' },
                 ] as const).map((opt) => (
                   <label
                     key={opt.value}
@@ -258,7 +258,7 @@ export default function CheckoutPage() {
               <div className="border border-gray-200 p-4">
                 <p className="text-[10px] font-black tracking-widest uppercase text-gray-400 mb-2">Paiement</p>
                 <p className="text-sm font-bold">
-                  {paymentMethod === 'card' ? `Carte bancaire **** ${card.number.slice(-4).replace(' ', '')}` : 'Livraison contre remboursement'}
+                  {paymentMethod === 'card' ? `Carte bancaire **** ${card.number.slice(-4).replace(' ', '')}` : 'Livraison avec paiement en espèce'}
                 </p>
               </div>
 
