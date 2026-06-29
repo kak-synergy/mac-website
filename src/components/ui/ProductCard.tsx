@@ -17,8 +17,6 @@ export default function ProductCard({ product }: Props) {
   const [added, setAdded] = useState(false);
   const [pickingShade, setPickingShade] = useState(false);
 
-  const availableShades = product.shades.filter((s) => s.inStock !== false);
-
   const doAdd = (e: React.MouseEvent, shade: { id: string; name: string; hex: string } | null) => {
     e.preventDefault();
     e.stopPropagation();
